@@ -3,6 +3,7 @@
 /* Constants */
 #define TERMINAL "st"
 #define TERMCLASS "St"
+#define BROWSER "brave"
 
 /* appearance */
 static unsigned int borderpx  = 3;        /* border pixel of windows */
@@ -16,7 +17,7 @@ static int smartgaps          = 1;        /* 1 means no outer gap when there is 
 static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
 /* static char *fonts[]          = { "JetBrainsMono Nerd Font:size=10", "JetBrainsMono Nerd Font:pixelsize=10:antialias=true:autohint=true"  }; */
-static char *fonts[]          = { "monospace:size=10", "JoyPixels:pixelsize=10:antialias=true:autohint=true"  };
+static char *fonts[]          = { "monospace:size=10", "NotoColorEmoji:pixelsize=10:antialias=true:autohint=true"  };
 static char normbgcolor[]           = "#222222";
 static char normbordercolor[]       = "#444444";
 static char normfgcolor[]           = "#bbbbbb";
@@ -42,7 +43,7 @@ static Sp scratchpads[] = {
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+static const char *tags[] = { "🐉", "🌲", "🌵", "4", "5", "6", "7", "8", "9" };
 /* static const char *tags[] = { "\uf489", "\uf7ae", "\uf121", "\uf04b", "\uf43b", "\uf251", "\ue727", "\uf537", "\uf684" }; */
 
 static const Rule rules[] = {
