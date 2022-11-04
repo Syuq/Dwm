@@ -22,7 +22,7 @@ static char normbgcolor[]           = "#222222";
 static char normbordercolor[]       = "#444444";
 static char normfgcolor[]           = "#bbbbbb";
 static char selfgcolor[]            = "#eeeeee";
-static char selbordercolor[]        = "#770000";
+static char selbordercolor[]        = "#033333";
 static char selbgcolor[]            = "#005577";
 static char *colors[][3] = {
        /*               fg           bg           border   */
@@ -43,8 +43,8 @@ static Sp scratchpads[] = {
 };
 
 /* tagging */
-static const char *tags[] = { "🐉", "🌲", "🌵", "4", "5", "6", "7", "8", "9" };
-/* static const char *tags[] = { "\uf489", "\uf7ae", "\uf121", "\uf04b", "\uf43b", "\uf251", "\ue727", "\uf537", "\uf684" }; */
+// static const char *tags[] = { "\uf489", "\uf7ae", "\uf121", "\uf04b", "\uf43b", "\uf251", "\ue727", "\uf537", "\uf684" };
+static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "😈" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -52,7 +52,7 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	*/
 	/* class    instance      title       	 tags mask    isfloating   isterminal  noswallow  monitor */
-	{ "Gimp",     NULL,       NULL,       	    1 << 8,       0,           0,         0,        -1 },
+	{ "kitty",     NULL,       NULL,       	    1 << 8,       0,           0,         0,        -1 },
 	{ TERMCLASS,  NULL,       NULL,       	    0,            0,           1,         0,        -1 },
 	{ NULL,       NULL,       "Event Tester",   0,            0,           0,         1,        -1 },
 	{ NULL,      "spterm",    NULL,       	    SPTAG(0),     1,           1,         0,        -1 },
@@ -213,7 +213,7 @@ static Key keys[] = {
 	{ MODKEY,			XK_x,		incrgaps,	{.i = -3 } },
 	/* { MODKEY|ShiftMask,		XK_x,		spawn,		SHCMD("") }, */
 	{ MODKEY,			XK_c,		spawn,		SHCMD("greenclip print | sed '/^$/d' | dmenu -i -l 10 -p clipboard | xargs -r -d'\n' -I '{}' greenclip print '{}'") },
-  /* { MODKEY,			XK_c,		spawn,		SHCMD("clipmenu") }, */
+        // { MODKEY,			XK_c,		spawn,		SHCMD("clipmenu") },
 	{ MODKEY|ShiftMask,		XK_c,		spawn,		SHCMD("pkill greenclip && greenclip clear && greenclip daemon &") },
 	/* V is automatically bound above in STACKKEYS */
 	{ MODKEY,			XK_b,		togglebar,	{0} },
