@@ -247,9 +247,11 @@ static Key keys[] = {
     /* { MODKEY|ShiftMask,		XK_x,		spawn, SHCMD("")
      * },
      */
+    // {MODKEY, XK_c, spawn,
+    //  SHCMD("greenclip print | sed '/^$/d' | dmenu -i -l 10 -p clipboard | "
+    //        "xargs -r -d'\n' -I '{}' greenclip print '{}'")},
     {MODKEY, XK_c, spawn,
-     SHCMD("greenclip print | sed '/^$/d' | dmenu -i -l 10 -p clipboard | "
-           "xargs -r -d'\n' -I '{}' greenclip print '{}'")},
+     SHCMD("rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'")},
     // { MODKEY,			XK_c,		spawn,
     // SHCMD("clipmenu")
     // },
