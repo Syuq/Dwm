@@ -54,7 +54,7 @@ static Sp scratchpads[] = {
 /* tagging */
 // static const char *tags[] = { "\uf489", "\uf7ae", "\uf121", "\uf04b",
 // "\uf43b", "\uf251", "\ue727", "\uf537", "\uf684" };
-static const char *tags[] = {"1", "2", "3", "4", "5", "6", "7", "8", "😈"};
+static const char *tags[] = {"1", "2", "3", "4", "5", "6", "7", "8", "9"}; // 😈
 
 static const Rule rules[] = {
     /* xprop(1):
@@ -247,16 +247,15 @@ static Key keys[] = {
     /* { MODKEY|ShiftMask,		XK_x,		spawn, SHCMD("")
      * },
      */
+    {MODKEY, XK_c, spawn, SHCMD("clipcat-menu")},
     // {MODKEY, XK_c, spawn,
-    //  SHCMD("greenclip print | sed '/^$/d' | dmenu -i -l 10 -p clipboard | "
-    //        "xargs -r -d'\n' -I '{}' greenclip print '{}'")},
-    {MODKEY, XK_c, spawn,
-     SHCMD("rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'")},
+    //  SHCMD("rofi -modi 'clipboard:greenclip print' -show clipboard
+    //  -run-command '{cmd}'")},
     // { MODKEY,			XK_c,		spawn,
     // SHCMD("clipmenu")
     // },
-    {MODKEY | ShiftMask, XK_c, spawn,
-     SHCMD("pkill greenclip && greenclip clear && greenclip daemon &")},
+    // {MODKEY | ShiftMask, XK_c, spawn,
+    //  SHCMD("pkill greenclip && greenclip clear && greenclip daemon &")},
     /* V is automatically bound above in STACKKEYS */
     {MODKEY, XK_b, togglebar, {0}},
     /* { MODKEY|ShiftMask,		XK_b,		spawn, SHCMD("")
@@ -296,7 +295,8 @@ static Key keys[] = {
     {MODKEY, XK_F3, spawn, SHCMD("displayselect")},
     {MODKEY, XK_F4, spawn,
      SHCMD(TERMINAL " -e pulsemixer; kill -44 $(pidof dwmblocks)")},
-    /* { MODKEY,			XK_F5,		xrdb,		{.v = NULL
+    /* { MODKEY,			XK_F5,		xrdb,		{.v =
+     * NULL
      * }
      * },
      */
@@ -316,7 +316,8 @@ static Key keys[] = {
     {MODKEY, XK_space, zoom, {0}},
     {MODKEY | ShiftMask, XK_space, togglefloating, {0}},
 
-    {0, XK_Print, spawn, SHCMD("maim ~/Pictures/screens/pic-full-$(date '+%y%m%d-%H%M-%S').png")},
+    {0, XK_Print, spawn,
+     SHCMD("maim ~/Pictures/screens/pic-full-$(date '+%y%m%d-%H%M-%S').png")},
     {ShiftMask, XK_Print, spawn, SHCMD("maimpick")},
     {MODKEY, XK_Print, spawn, SHCMD("dmenurecord")},
     {MODKEY | ShiftMask, XK_Print, spawn, SHCMD("dmenurecord kill")},
